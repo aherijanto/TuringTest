@@ -5,10 +5,14 @@ public class BasketBall {
     public static int calPoints(String[] ops){
         int  result = Integer.MIN_VALUE;
         String[] numbers = new String[ops.length];
+        int IndexNumber = 0;
+        int prevIndex=0;
         for(int index=0;index<ops.length;index++){
             String code= ops[index];
             if((!code.equals("C"))&&(!code.equals("D"))){
-                numbers[index] = ops[index];
+                numbers[IndexNumber] = ops[index];
+                prevIndex=IndexNumber;
+                IndexNumber++;
             }
             if(code.equals("C")){
                 numbers[index-1] = null;
